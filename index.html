@@ -38,16 +38,31 @@
 
 
 
-
-
-	
 		
     
 <script src="./index_files/common-analytics.min.1.1.2880.0_20200312.js.download"></script>
 
+<script src="amazon-connect-chat-interface.js"></script>
+
 
 	
+$(document).ready((a) => {
+    connect.ChatInterface.init({
+      containerId: 'root' // This is the id of the container where you want the widget to reside
+      });
+  });
 
+  connect.ChatInterface.initiateChat({
+    name: "Shravan",
+    username: "Gannu",
+    region: "eu-central-1",
+    apiGatewayEndpoint: "https://wygb0h31yl.execute-api.eu-central-1.amazonaws.com/Prod",
+    contactAttributes: JSON.stringify({
+      "customerName": "Shravan"
+    }),
+    contactFlowId: "66b5fc73-bfa8-481e-ba96-03ee63b074e9",
+    instanceId: "946bd0f1-4b64-458c-bc89-06df95eb2713"
+  },successHandler, failureHandler)
 
 
 	<style></style></head><body class="theme-black" style="position: relative;"><div style="display:none" id="aiFlag">false</div>
