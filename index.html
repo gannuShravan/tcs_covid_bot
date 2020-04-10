@@ -35,34 +35,35 @@
 <link rel="icon" href="https://www.tcs.com/content/dam/tcs/images/common/TCS_Default_icon.png">
 
 
+<script type='text/javascript' src="D:/Shravan/POCs/COVID/amazon-connect-chat-interface.js"></script>
 
-
-
-		
-    
-<script src="./index_files/common-analytics.min.1.1.2880.0_20200312.js.download"></script>
-
-<script src="amazon-connect-chat-interface.js"></script>
-
-
-	
+<script>
 $(document).ready((a) => {
     connect.ChatInterface.init({
       containerId: 'root' // This is the id of the container where you want the widget to reside
       });
-  });
 
+    });
   connect.ChatInterface.initiateChat({
-    name: "Shravan",
-    username: "Gannu",
+    name: customerName,
+    username: username,
     region: "eu-central-1",
     apiGatewayEndpoint: "https://wygb0h31yl.execute-api.eu-central-1.amazonaws.com/Prod",
     contactAttributes: JSON.stringify({
-      "customerName": "Shravan"
+      "customerName": customerName
     }),
     contactFlowId: "66b5fc73-bfa8-481e-ba96-03ee63b074e9",
     instanceId: "946bd0f1-4b64-458c-bc89-06df95eb2713"
   },successHandler, failureHandler)
+
+</script>
+		
+    
+<script src="./index_files/common-analytics.min.1.1.2880.0_20200312.js.download"></script>
+
+
+	
+
 
 
 	<style></style></head><body class="theme-black" style="position: relative;"><div style="display:none" id="aiFlag">false</div>
